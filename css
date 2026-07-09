@@ -1,103 +1,32 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+body { background-color: #2c3e50; color: white; display: flex; flex-direction: column; align-items: center; height: 100vh; overflow: hidden; }
 
-body {
-    background-color: #2c3e50;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+#menu { margin-top: 20vh; text-align: center; }
+#menu button { padding: 15px 30px; margin: 10px; font-size: 16px; cursor: pointer; background-color: #27ae60; color: white; border: none; border-radius: 5px; font-weight: bold; }
+#menu button:hover { background-color: #219150; }
 
-#menu {
-    text-align: center;
-}
+.escondido { display: none !important; }
 
-#menu button {
-    padding: 15px 30px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
+#placar { display: flex; justify-content: space-between; width: 90vw; max-width: 800px; background: #1a252f; padding: 15px; border-radius: 10px; margin-top: 10px; margin-bottom: 10px; font-weight: bold; font-size: 18px; }
+.equipe { color: #f1c40f; }
+.info-rodada { color: #ecf0f1; }
 
-#menu button:hover {
-    background-color: #219150;
-}
+#mesa-de-truco { width: 90vw; max-width: 800px; height: 75vh; background-color: #0b6623; border-radius: 100px; border: 15px solid #8b5a2b; position: relative; display: flex; justify-content: center; align-items: center; }
 
-.escondido {
-    display: none !important;
-}
+.jogador { position: absolute; text-align: center; }
+.jogador span { background: rgba(0,0,0,0.7); padding: 5px 10px; border-radius: 5px; margin-bottom: 5px; display: inline-block; font-size: 14px; }
+.topo { top: 10px; } .base { bottom: 10px; }
+.esquerda { left: 10px; transform: translateY(-50%); top: 50%; }
+.direita { right: 10px; transform: translateY(-50%); top: 50%; }
 
-#mesa-de-truco {
-    width: 90vw;
-    height: 90vh;
-    background-color: #0b6623; /* Verde feltro de mesa de cartas */
-    border-radius: 100px;
-    border: 15px solid #8b5a2b; /* Borda de madeira */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.cartas { display: flex; gap: 5px; justify-content: center; min-height: 90px; }
+.carta { width: 60px; height: 90px; background-color: white; color: black; border-radius: 5px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; border: 1px solid #ccc; cursor: pointer; user-select: none; }
+.carta:hover { transform: translateY(-10px); }
+.carta-costas { background-color: #c0392b; background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(0,0,0,0.1) 5px, rgba(0,0,0,0.1) 10px); color: transparent; cursor: default; }
+.carta-costas:hover { transform: none; }
 
-.jogador {
-    position: absolute;
-    text-align: center;
-}
+#btn-truco, #btn-proxima { margin-top: 10px; padding: 10px 20px; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+#btn-truco { background-color: #c0392b; } #btn-truco:hover { background-color: #a53125; }
+#btn-proxima { background-color: #2980b9; } #btn-proxima:hover { background-color: #1f6391; }
 
-.jogador span {
-    background: rgba(0,0,0,0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-
-.topo { top: 20px; }
-.base { bottom: 20px; }
-.esquerda { left: 20px; transform: translateY(-50%); top: 50%; }
-.direita { right: 20px; transform: translateY(-50%); top: 50%; }
-
-.cartas {
-    display: flex;
-    gap: 10px;
-    margin-top: 5px;
-}
-
-.carta {
-    width: 60px;
-    height: 90px;
-    background-color: white;
-    color: black;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    border: 1px solid #ccc;
-}
-
-#btn-truco {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #c0392b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#btn-truco:hover {
-    background-color: #a53125;
-}
+#cartas-jogadas { display: flex; gap: 10px; margin-top: 20px; }
