@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truco 2x2 Profissional</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu">
+        <h1>Truco 2x2</h1>
+        <button onclick="iniciarJogo('sujo')">Jogar com Baralho Sujo</button>
+        <button onclick="iniciarJogo('limpo')">Jogar com Baralho Limpo</button>
+    </div>
+
+    <div id="mesa-de-truco" class="escondido">
+        <div class="jogador topo" id="aliado">
+            <span>Aliado</span>
+            <div class="cartas" id="mao-aliado"></div>
+        </div>
+        
+        <div class="jogador esquerda" id="oponente1">
+            <span>Oponente 1</span>
+            <div class="cartas" id="mao-oponente1"></div>
+        </div>
+
+        <div class="centro-mesa">
+            <div id="vira"></div>
+            <div id="cartas-jogadas"></div>
+        </div>
+
+        <div class="jogador direita" id="oponente2">
+            <span>Oponente 2</span>
+            <div class="cartas" id="mao-oponente2"></div>
+        </div>
+
+        <div class="jogador base" id="voce">
+            <span>Você</span>
+            <div class="cartas" id="mao-voce"></div>
+            <button id="btn-truco">TRUCO!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
