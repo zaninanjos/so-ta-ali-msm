@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truco 2x2 Profissional</title>
+    <title>Truco 2x2 Completo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="menu">
-        <h1>Truco 2x2</h1>
-        <button onclick="iniciarJogo('sujo')">Jogar com Baralho Sujo</button>
-        <button onclick="iniciarJogo('limpo')">Jogar com Baralho Limpo</button>
+        <h1>Truco 2x2 Profissional</h1>
+        <button onclick="iniciarJogo('sujo')">Jogar Baralho Sujo</button>
+        <button onclick="iniciarJogo('limpo')">Jogar Baralho Limpo</button>
+    </div>
+
+    <div id="placar" class="escondido">
+        <div class="equipe">NÓS: <span id="pontos-nos">0</span></div>
+        <div class="equipe">ELES: <span id="pontos-eles">0</span></div>
+        <div class="info-rodada">Valor: <span id="valor-rodada">1</span> | Vazas (Nós <span id="vazas-nos">0</span> x <span id="vazas-eles">0</span> Eles)</div>
     </div>
 
     <div id="mesa-de-truco" class="escondido">
         <div class="jogador topo" id="aliado">
-            <span>Aliado</span>
+            <span>Aliado (Bot)</span>
             <div class="cartas" id="mao-aliado"></div>
         </div>
         
@@ -37,7 +43,8 @@
         <div class="jogador base" id="voce">
             <span>Você</span>
             <div class="cartas" id="mao-voce"></div>
-            <button id="btn-truco">TRUCO!</button>
+            <button id="btn-truco" onclick="pedirTruco()">TRUCO!</button>
+            <button id="btn-proxima" class="escondido" onclick="novaRodada()">Próxima Mão</button>
         </div>
     </div>
 
